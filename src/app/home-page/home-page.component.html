@@ -1,0 +1,66 @@
+<div class="shell-padding">
+  <div class="container-fluid">
+    <!--  -->
+    <div class="row">
+      <h4>{{title}}</h4>
+    </div>
+    <!--  -->
+    <div class="row justify-content-between">
+      <div class="col-md-4">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Provinces
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a *ngFor="let prov of provinces" class="dropdown-item"> {{prov}}</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Appliances
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a *ngFor="let apple of appliances" class="dropdown-item"> {{apple}}</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        Scanner
+      </div>
+    </div>
+    <!--  -->
+    <div class="row">
+      <div class="input-group mb-3">
+        <input #energyConsumption (keyup)="showValue(energyConsumption.value)" type="number" class="form-control"
+          aria-label="Annual Energy Label">
+        <div class="input-group-append">
+          <span class="input-group-text">kWh</span>
+        </div>
+      </div>
+    </div>
+    <!--  -->
+    <div class="row">
+      <ul class="list-group col-md-6">
+        <li class="list-group-item d-flex justify-content-between">1 Month
+          <span>${{(cost/12).toFixed(2)}}</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between">2 Months
+          <span>${{(cost/6).toFixed(2)}}</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between">1 Year
+          <span>${{cost.toFixed(2)}}</span>
+        </li>
+      </ul>
+      <div class="col-md-6">
+        <div class="progress" style="height: 20px;">
+          <div class="progress-bar" role="progressbar" [style.width]=" getWidth() + '%'" aria-valuenow="25" aria-valuemin="0"
+            aria-valuemax="100"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
