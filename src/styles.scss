@@ -85,5 +85,11 @@ hr {
 }
 
 .progress-bar-spacing {
-    padding: 15px 0 0;
+    padding: 15px 0 15px;
+}
+
+canvas.drawing, canvas.drawingBuffer {
+    position: absolute;
+    left: 0;
+    top: 0;
 }
