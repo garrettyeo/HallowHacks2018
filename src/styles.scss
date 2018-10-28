@@ -25,11 +25,68 @@ body {
     background-size: cover;
 }
 
+.church-block {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url(./assets/church.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 600px;
+    width: 800px;
+    background-size: cover;
+}
+
+.community-block {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url(./assets/communitycenter.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 600px;
+    width: 800px;
+    background-size: cover;
+}
+
+.firehall-block {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url(./assets/firehall.JPG);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 600px;
+    width: 800px;
+    background-size: cover;
+}
+
 .title-block h1 {
-    text-align: left;
+    text-align: center;
     color: $white;
     font-style: italic;
     font-weight: 800;
+}
+
+.community-block h1 {
+    font-style: italic;
+    font-weight: 800;
+    color: $white;
+    padding: 0 50px 0;
+    text-align: center;
+}
+
+.firehall-block h1 {
+    font-style: italic;
+    font-weight: 800;
+    color: $white;
+    padding: 0 50px 0;
+    text-align: center;
+}
+
+.church-block h1 {
+    font-style: italic;
+    font-weight: 800;
+    color: $white;
+    padding: 0 50px 0;
+    text-align: center;
 }
 
 .divider {

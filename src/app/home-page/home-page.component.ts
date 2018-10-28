@@ -7,11 +7,11 @@ import Quagga from 'quagga';
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit {
-  title: string = 'Is My Appliance Efficient?';
+  title: string = 'Are My Appliances Efficient?';
   provinces: Array<string> = PROVINCES;
   appliances: Array<string> = APPLIANCES;
   energyConsumption: number;
-  currentAppliance: any = APPLIANCE_CONSUMPTION[3];
+  currentAppliance: any;
   cost: number = 0;
   barcodeFound: number;
   curYear: number = 2018;
@@ -32,8 +32,8 @@ export class HomePageComponent implements OnInit {
         type: "LiveStream",
         target: document.querySelector('#scanner-container'),
         constraints: {
-          width: 480,
-          height: 320,
+          width: 365,
+          height: 300,
           facingMode: "environment"
         },
       },
@@ -107,6 +107,9 @@ export class HomePageComponent implements OnInit {
   cameraOff = () => {
     Quagga.stop();
     document.getElementById("barcode-found").innerHTML = "Barcode Found:";
+    this.selectAppliance('Refrigerator', 5);
+    this.energyConsumption = 620;
+    this.calcCost();
   }
 
   showValue = (value: number) => {
@@ -121,7 +124,7 @@ export class HomePageComponent implements OnInit {
   }
 
   getWidth = () => {
-    return (this.energyConsumption - this.currentAppliance.min) / this.currentAppliance.max * 100;
+    return (this.energyConsumption - this.currentAppliance.min) / (this.currentAppliance.max - this.currentAppliance.min) * 100;
   }
 
   selectAppliance = (appliance: string, index: number) => {
@@ -132,7 +135,7 @@ export class HomePageComponent implements OnInit {
 }
 
 const PROVINCES = ['BC', 'AB', 'SK', 'MB', 'ON', 'PQ', 'NS', 'NB', 'NL', 'PEI'];
-const APPLIANCES = ['Clothes Dryers', 'Clothes Washers', 'Dishwashers', 'Freezers', 'Electric Ranges (Cooktops and Ovens)', 'Refrigerators'];
+const APPLIANCES = ['Clothes Dryers', 'Clothes Washers', 'Dishwashers', 'Freezers', 'Electric Ranges', 'Refrigerators'];
 const APPLIANCE_CONSUMPTION = [
   { min: 721, max: 1280, average: 928 },
   { min: 198, max: 354, average: 217 },
