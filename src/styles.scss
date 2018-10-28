@@ -1,1 +1,89 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+// Colour Palette
+$dark: #040C0E;
+$blue: #132226;
+$green: #525B56;
+$beige: #BE9063;
+$grey: #A4978E;
+$white: #FFF;
+$blockHeight: 300px;
+
+// Font Definition Montserrat
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.title-block {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url(./assets/appliances.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: $blockHeight;
+    background-size: cover;
+}
+
+.title-block h1 {
+    text-align: left;
+    color: $white;
+    font-style: italic;
+    font-weight: 800;
+}
+
+.divider {
+    height: 60px;
+    background-color: $beige;
+}
+
+.divider h3 {
+    color: $blue;
+}
+
+.enter-info {
+    min-height: $blockHeight;
+}
+
+.section-image {
+    background-image: url(./assets/energuide2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: $blockHeight;
+    background-size: cover;
+}
+
+@media screen and (max-width: 768px) {
+    .section-image {
+        display: none !important;
+    }
+}
+
+hr {
+    height: 0;
+    border: 1px solid $green;
+}
+
+.list-group-title {
+    background-color: $beige;
+}
+
+.row {
+    padding: 0 0 20px
+}
+
+@media screen and (max-width: 768px) {
+    .row {
+        padding: 0 15px 20px;
+    }
+    .list-group {
+        padding-left: 15px;
+    }
+    [class*="col-"] {
+        padding: 0 0 15px;
+    }
+}
+
+.progress-bar-spacing {
+    padding: 15px 0 0;
+}
