@@ -1,0 +1,62 @@
+<form>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>First Name</label>
+      <input type="firstName" class="form-control" id="firstName" placeholder="First Name" required 
+      [(ngModel)]="inputFirstName" name = "firstName">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputLastName">Last Name</label>
+      <input type="lastName" class="form-control" id="lastName" placeholder="First Name" required 
+      [(ngModel)]="inputLastName" name = "lastName">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputEmail">Email</label>
+      <input type="email" class="form-control" id="email" placeholder="Email" required 
+      [(ngModel)]="inputEmail" name = "email">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPhone">Phone</label>
+      <input type="phone" class="form-control" id="phone" placeholder="Phone" required 
+      [(ngModel)]="inputPhone" name = "phone">
+      >
+    </div>
+    <div class="form-group col-md-12">
+      <label for="inputApplianceType">Appliance Type</label>
+      <select id="inputApplianceType" class="form-control">
+        <option selected>Choose...</option>
+        <option *ngFor="let apple of appliances" class="dropdown-item"> {{apple}} </option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputAddress">Address</label>
+    <input type="address" class="form-control" id="address" placeholder="1234 Main St" required 
+    [(ngModel)]="inputAddress" name = "address">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputCity">City</label>
+      <input type="city" class="form-control" id="city" placeholder="Gotham" required 
+      [(ngModel)]="inputCity" name = "city">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputProvince">Province</label>
+      <select id="inputProvince" class="form-control">
+        <option selected>Choose...</option>
+        <option *ngFor="let provs of provinces" class="dropdown-item"> {{provs}} </option>
+      </select>
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputZip">Zip</label>
+      <input type="zip" class="form-control" id="zip" placeholder="A1A 1A1" required 
+      [(ngModel)]="inputZip" name = "zip">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputComment">Comments</label>
+    <textarea class="form-control" id="inputComment" rows="3" required 
+    [(ngModel)]="inputComment" name = "comment"></textarea>
+  </div>
+  <button type="post" class="btn btn-link" routerLink="../donation" (click)="model()">Post</button>
+</form>
