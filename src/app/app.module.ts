@@ -7,12 +7,14 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { DonationComponent } from './donation/donation.component';
 import { PostFormComponent } from './post-form/post-form.component';
 import { FormsModule } from '@angular/forms';
+import { AboutComponent } from './about/about.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     DonationComponent,
-    PostFormComponent
+    PostFormComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

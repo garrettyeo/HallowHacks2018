@@ -14,7 +14,7 @@ export class HomePageComponent implements OnInit {
   currentAppliance: any;
   cost: number = 0;
   barcodeFound: number;
-  curYear: number = 2018;
+  curYear: number = 2019;
   applianceSelected: string = "Appliance";
 
   constructor() {
